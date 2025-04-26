@@ -4,7 +4,7 @@
         color: '#a6bbcf',
         defaults: {
 	        name: { value:"" },
-            sendkey: { value:"" }, 
+            server: {value:"", type:"serverchan3-server"},
 			title: { value:"" }, 
 			desp: { value:"" }, 
 			tag: { value:"" }
@@ -16,7 +16,16 @@
             return this.name|| "server酱3";
         },
     });
-    
+    RED.nodes.registerType('serverchan3-server',{
+        category: 'config',
+        defaults: {
+            name : { value:"我的Server酱3"},
+            sendkey: { value:"",required:true }
+        },
+        label: function() {
+            return this.name;
+        }
+    });
 </script>
 
 <script type="text/html" data-template-name="serverchan3">
@@ -25,8 +34,8 @@
         <input type="text" id="node-input-name" placeholder="Name">
     </div>
     <div class="form-row">
-        <label for="node-input-sendkey"><i class="fa fa-key"></i> SendKey</label>
-        <input type="password" id="node-input-sendkey" placeholder="填写Server酱3的SendKey">
+        <label for="node-input-server"><i class="fa fa-server"></i>服务</label>
+        <input type="text" id="node-input-server" placeholder="Server">
     </div>
     <div class="form-row">
         <label for="node-input-title"><i class="fa fa-paragraph"></i> 标题</label>
@@ -42,26 +51,47 @@
     </div>
 </script>
 
+<script type="text/html" data-template-name="serverchan3-server">
+    <div class="form-row">
+        <label for="node-config-input-name"><i class="fa fa-user-o"></i> 名称</label>
+        <input type="text" id="node-config-input-name" placeholder="Name">
+    </div>
+    <div class="form-row">
+        <label for="node-config-input-sendkey"><i class="fa fa-key"></i> SendKey</label>
+        <input type="password" id="node-config-input-sendkey" placeholder="填写Server酱3的SendKey">
+    </div>
+</script>
 <script type="text/html" data-help-name="serverchan3">
     <p>Server酱3的节点</p>
+    <h3>介绍</h3>
+    <dl class="message-properties">
+        <dt>Server酱3，一款无后台APP的消息推送服务</dt>
+        <dd>访问sc3.ft07.com注册获取sendkey，下载APP登录后，杀掉后台也可以实现消息推送</dd>
+    </dl>
+    <h3>Inputs</h3>
+    <dl class="message-properties">
+        <dt class="optional">title <span class="property-type">string</span></dt>
+        <dd> 填写消息标题，必须，也可以通过msg.title载入</dd>
+        <dt class="optional">desp <span class="property-type">string</span></dt>
+        <dd> 填写消息正文，非必须，也可以通过msg.desp载入</dd>
+        <dt class="optional">tag <span class="property-type">string</span></dt>
+        <dd> 填写消息标签，非必须，也可以通过msg.tag载入</dd>
+    </dl>
+</script>
+<script type="text/html" data-help-name="serverchan3-server">
+    <p>Server酱3的服务配置节点</p>
     <h3>Config</h3>
     <dl class="message-properties">
         <dt>SendKey
             <span class="property-type">string</span>
         </dt>
-        <dd>访问sc3.ft07.com注册获取sendkey，下载APP登录后，杀掉后台也可以实现消息推送</dd>
+        <dd>访问官网sc3.ft07.com根据要求注册获取sendkey</dd>
     </dl>
     <h3>Inputs</h3>
     <dl class="message-properties">
         <dt>sendkey
             <span class="property-type">string</span>
         </dt>
-        <dd> 填写Server酱3的SendKey，必须</dd>
-        <dt class="optional">title <span class="property-type">string</span></dt>
-        <dd> 填写消息标题，非必须</dd>
-        <dt class="optional">desp <span class="property-type">string</span></dt>
-        <dd> 填写消息正文，必须</dd>
-        <dt class="optional">tag <span class="property-type">string</span></dt>
-        <dd> 填写消息标签，非必须</dd>
+        <dd> 填写Server酱3的SendKey，也可以通过msg.sendkey载入</dd>
     </dl>
 </script>
