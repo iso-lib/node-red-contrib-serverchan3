@@ -6,6 +6,6 @@
 
 1. 配置 `msg.sendkey` ， `msg.title` ， `msg.desp` 即可推送消息到手机
 
-![](https://github.com/iso-lib/node-red-contrib-serverchan3/blob/main/icon/example1.png?raw=true)
+![](https://github.com/iso-lib/node-red-contrib-serverchan3/blob/main/icons/example1.png?raw=true)
 
-![](https://github.com/iso-lib/node-red-contrib-serverchan3/blob/main/icon/example2.png?raw=true)
+![](https://github.com/iso-lib/node-red-contrib-serverchan3/blob/main/icons/example2.png?raw=true)
