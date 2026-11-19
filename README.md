@@ -6,7 +6,9 @@
 
 1. 配置 `msg.sendkey` ， `msg.title` ， `msg.desp` 即可推送消息到手机
 
-## Server酱MAX（内测）
+## (2026-11-19新增）Server酱MAX（内测）
+
+内测网址：https://max.ft07.com/
 
 无需改界面配置：直接在服务配置里填 MAX 版 SendKey 即可自动识别。
 
